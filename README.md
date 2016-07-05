@@ -46,3 +46,21 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 19. Implement error handling for undefined variables and out-of-bound array access.
 20. When complete - all of your tests should pass. 
 21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
+
+# Testsuite: RSS Feeds
+
+# Test: all Feeds has populated URL
+
+* Check if allFeeds array defined.
+* Check if allfeeds array to have a length greater than 0.             
+* Check if allfeeds elements has url to defined. 
+* Check if allfeeds elements url not to be empty. 
+
+
+
+
+
+# External tools
+
+* [Regular Exp Match elements of a url](http://www.regextester.com/20)
+* [RegExLib.com](http://regexlib.com/Search.aspx?k=url&AspxAutoDetectCookieSupport=1)
