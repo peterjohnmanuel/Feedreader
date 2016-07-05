@@ -49,18 +49,23 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 
 # Testsuite: RSS Feeds
 
-# Test: all Feeds has populated URL
+## Test: all Feeds has populated URL
 
 * Check if allFeeds array defined.
 * Check if allfeeds array to have a length greater than 0.             
-* Check if allfeeds elements has url to defined. 
-* Check if allfeeds elements url not to be empty. 
+* Check if allfeeds elements has url defined. 
+* Check if allfeeds elements url is not empty. 
 
 
+## Test: all Feeds has populated name
+
+* Check if allFeeds array defined.
+* Check if allfeeds array to have a length greater than 0.   
+* Check if allfeeds elements has name defined. 
+* Check if allfeeds elements name is not empty. 
 
 
-
-# External tools
+# Urls used during research
 
 * [Regular Exp Match elements of a url](http://www.regextester.com/20)
 * [RegExLib.com](http://regexlib.com/Search.aspx?k=url&AspxAutoDetectCookieSupport=1)
