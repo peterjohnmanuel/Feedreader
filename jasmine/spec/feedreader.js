@@ -69,24 +69,36 @@ $(function () {
                 expect(feed.name).not.toMatch(/''/);
             });
 
-        });        
+        });
+
+    });
+
+    // Menu Test Suite
+    describe('The Menu', function () {
+
+        it('menu visibility', function () {
+
+            // Load body element into variable.
+            var body = document.getElementsByTagName('body');
+
+            // Test: Check if the body element exists.
+            expect(body).toBeDefined();
+
+            // Test: Check if the body element has the menu-hidden class.
+            expect(document.getElementsByTagName('body')[0].classList.contains('menu-hidden')).toBe(true);
+        });
+
+
+
+        /* TODO: Write a test that ensures the menu changes
+         * visibility when the menu icon is clicked. This test
+         * should have two expectations: does the menu display when
+         * clicked and does it hide when clicked again.
+         */
 
     });
 
 
-    /* TODO: Write a new test suite named "The menu" */
-
-    /* TODO: Write a test that ensures the menu element is
-     * hidden by default. You'll have to analyze the HTML and
-     * the CSS to determine how we're performing the
-     * hiding/showing of the menu element.
-     */
-
-    /* TODO: Write a test that ensures the menu changes
-     * visibility when the menu icon is clicked. This test
-     * should have two expectations: does the menu display when
-     * clicked and does it hide when clicked again.
-     */
 
     /* TODO: Write a new test suite named "Initial Entries" */
 

@@ -65,6 +65,14 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 * Check if allfeeds elements name is not empty. 
 
 
+# Testsuite: The Menu
+
+## Test: menu visibility
+
+* Check if the body element exists.
+* Check if the body element has the menu-hidden class.
+
+
 # Urls used during research
 
 * [Regular Exp Match elements of a url](http://www.regextester.com/20)
