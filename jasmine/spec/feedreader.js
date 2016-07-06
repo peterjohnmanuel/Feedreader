@@ -79,13 +79,13 @@ $(function () {
         it('menu visibility', function () {
 
             // Load body element into variable.
-            var body = document.getElementsByTagName('body');
+            var body = $('body'); // document.getElementsByTagName('body');
 
             // Test: Check if the body element exists.
             expect(body).toBeDefined();
 
             // Test: Check if the body element has the menu-hidden class.
-            expect(document.getElementsByTagName('body')[0].classList.contains('menu-hidden')).toBe(true);
+            expect(body.hasClass('menu-hidden')).toBe(true);
         });
 
 
