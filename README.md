@@ -72,8 +72,19 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 * Check if the body element exists.
 * Check if the body element has the menu-hidden class.
 
+## Test: hide and show menu visibility
+
+* Check if the body element exists.
+* Check if the body element has the menu-hidden class.
+* Check if the body element exists.
+* Check if the body element has the menu-hidden class on startup.
+* Check if the body element does not have the class menu-hidden.
+* Check if the body element has the class menu-hidden.
+
+
 
 # Urls used during research
 
 * [Regular Exp Match elements of a url](http://www.regextester.com/20)
 * [RegExLib.com](http://regexlib.com/Search.aspx?k=url&AspxAutoDetectCookieSupport=1)
+* [JQuery event.stopPropagation](https://api.jquery.com/event.stoppropagation/)

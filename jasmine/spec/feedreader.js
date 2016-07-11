@@ -27,6 +27,7 @@ $(function () {
         });
 
 
+        // Test for all Feeds has populated url.
         it('all Feeds has populated url', function () {
 
             // Test: Check if allFeeds array defined
@@ -49,6 +50,7 @@ $(function () {
 
         });
 
+        // Test for all Feeds has populated name.
         it('all Feeds has populated name', function () {
 
             // Test: Check if allFeeds array defined
@@ -76,25 +78,47 @@ $(function () {
     // Menu Test Suite
     describe('The Menu', function () {
 
+        // Test menu visibility.
         it('menu visibility', function () {
 
             // Load body element into variable.
-            var body = $('body'); // document.getElementsByTagName('body');
+            var body = $('body');
 
             // Test: Check if the body element exists.
             expect(body).toBeDefined();
 
             // Test: Check if the body element has the menu-hidden class.
-            expect(body.hasClass('menu-hidden')).toBe(true);
+            expect(body.hasClass('menu-hidden')).toBeTruthy();
         });
 
 
+        // Test to hide and show menu visibility after click event.
+        it('hide and show menu visibility', function () {
+            // Load body element into variable.
+            var body = $('body');
 
-        /* TODO: Write a test that ensures the menu changes
-         * visibility when the menu icon is clicked. This test
-         * should have two expectations: does the menu display when
-         * clicked and does it hide when clicked again.
-         */
+            // Test: Check if the body element exists.
+            expect(body).toBeDefined();
+
+            // Test: Check if the body element has the menu-hidden class on startup.
+            expect(body.hasClass('menu-hidden')).toBeTruthy();
+
+            // Store the menu icon link element in a cached variable.
+            var menuIconLink = $('.menu-icon-link');
+
+            // Toggle the click event.
+            menuIconLink.click();
+
+            // Test: Check if the body element does not have the class menu-hidden.
+            expect(body.hasClass('menu-hidden')).toBeFalsy();
+
+            // Toggle the click event.
+            menuIconLink.click();
+
+             // Test: Check if the body element has the class menu-hidden.
+            expect(body.hasClass('menu-hidden')).toBeTruthy();
+        });
+
 
     });
 
