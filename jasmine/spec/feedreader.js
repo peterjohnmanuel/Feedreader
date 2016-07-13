@@ -115,7 +115,7 @@ $(function () {
             // Toggle the click event.
             menuIconLink.click();
 
-             // Test: Check if the body element has the class menu-hidden.
+            // Test: Check if the body element has the class menu-hidden.
             expect(body.hasClass('menu-hidden')).toBeTruthy();
         });
 
@@ -123,15 +123,50 @@ $(function () {
     });
 
 
+    // Test suite: Initial Entries
+    describe('Initial Entries', function () {
 
-    /* TODO: Write a new test suite named "Initial Entries" */
+        beforeEach(function (done) {
+            loadFeed(0, function () {
+                done();
+            })
+        });
 
-    /* TODO: Write a test that ensures when the loadFeed
-     * function is called and completes its work, there is at least
-     * a single .entry element within the .feed container.
-     * Remember, loadFeed() is asynchronous so this test will require
-     * the use of Jasmine's beforeEach and asynchronous done() function.
-     */
+        // Test Description : Load Feed function called 
+        it('Load Feed function called ', function (done) {
+
+            // Load body element into variable.
+            var body = $('body');
+
+            // Load feed element into variable.
+            var feed = $('.feed');
+            // Test: Check if the body element exists.
+            expect(body).toBeDefined();
+
+            // Test: Check if the feed class exists.
+            expect(feed).not.toBeUndefined();
+
+            // Get all children into a dom field.
+            var feedDomElement = feed.children();
+
+            // Test: Check if there is a entry link class.
+            expect(feedDomElement.has('a.entry-link')).toBeTruthy();
+
+            // Get all entry links.
+            var entryLinks = $('.feed a.entry-link');
+
+            // Loop over all entry links 
+            $.each(entryLinks, function (i, link) {
+
+                // Test: Check each entry-link has a article.entry element.
+                expect($(link).has('article.entry').length).toBe(1);
+            });
+
+            done();
+        });
+    });
+
+
 
     /* TODO: Write a new test suite named "New Feed Selection"
 

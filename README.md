@@ -81,6 +81,14 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 * Check if the body element does not have the class menu-hidden.
 * Check if the body element has the class menu-hidden.
 
+# Test suite: Initial Entries
+
+## Test : Load Feed function called 
+
+* Check if the body element exists.
+* Check if the feed class exists.
+* Check if there is a entry link class.
+* Check each entry-link has a article.entry element.
 
 
 # Urls used during research
@@ -88,3 +96,4 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 * [Regular Exp Match elements of a url](http://www.regextester.com/20)
 * [RegExLib.com](http://regexlib.com/Search.aspx?k=url&AspxAutoDetectCookieSupport=1)
 * [JQuery event.stopPropagation](https://api.jquery.com/event.stoppropagation/)
+* [Using Jasmine 2.0's New done() Function to Test Asynchronous Processes](http://www.htmlgoodies.com/beyond/javascript/stips/using-jasmine-2.0s-new-done-function-to-test-asynchronous-processes.html)
