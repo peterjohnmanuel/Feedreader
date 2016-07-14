@@ -55,6 +55,7 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 * Check if allfeeds array to have a length greater than 0.             
 * Check if allfeeds elements has url defined. 
 * Check if allfeeds elements url is not empty. 
+* Check if feed is a valid url
 
 
 ## Test: all Feeds has populated name

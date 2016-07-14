@@ -46,6 +46,9 @@ $(function () {
             allFeeds.forEach(function (feed) {
                 // Test: Feeds url not to be empty 
                 expect(feed.url).not.toMatch(/''/);
+
+                // Test: Check if feed is a valid url
+                expect(feed.url).toMatch(/^(http[s]?:\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/);
             });
 
         });
