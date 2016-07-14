@@ -166,12 +166,37 @@ $(function () {
         });
     });
 
+    // Test suite: New Feed Selection
+    describe('New Feed Selection', function () {
 
+        var feed;
 
-    /* TODO: Write a new test suite named "New Feed Selection"
+        beforeEach(function (done) {
+            loadFeed(0, function () {
+                feed = $('.feed');
+                done();
+            })
+        });
 
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
+        it('Feed Content Changed.', function (done) {
+
+            // Load body element into variable.
+            var body = $('body');
+
+            // Load feed element into variable.
+            var feedAfterLoad = $('.feed');
+            // Test: Check if the body element exists.
+            expect(body).toBeDefined();
+
+            // Test: Check if the feed class exists.
+            expect(feedAfterLoad).not.toBeUndefined();
+
+            // Test: Check if the initial feed object and the new feed object are the same.
+            expect(feedAfterLoad).not.toBe(feed);
+
+            done();
+        });
+
+    });
+
 } ());

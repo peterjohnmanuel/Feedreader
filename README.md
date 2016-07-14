@@ -91,6 +91,14 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 * Check each entry-link has a article.entry element.
 
 
+# Test suite: New Feed Selection
+
+## Test : Feed Content Changed.
+
+* Test: Check if the body element exists.
+* Test: Check if the feed class exists.
+* Test: Check if the initial feed object and the new feed object are the same.
+
 # Urls used during research
 
 * [Regular Exp Match elements of a url](http://www.regextester.com/20)
