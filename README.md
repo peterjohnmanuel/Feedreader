@@ -82,6 +82,13 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 * Check if the body element does not have the class menu-hidden.
 * Check if the body element has the class menu-hidden.
 
+## Test side menu links.
+
+* Check if the body element exists.
+* Check if the feed class exists on element ul.
+* Check if the feed class exists on element ul.
+* Check each li contains a element.
+
 # Test suite: Initial Entries
 
 ## Test : Load Feed function called 

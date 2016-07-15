@@ -122,6 +122,31 @@ $(function () {
             expect(body.hasClass('menu-hidden')).toBeTruthy();
         });
 
+        // Test side menu links.
+        it('Side menu links exists', function () {
+
+            // Load body element into variable.
+            var body = $('body');
+
+            // Test: Check if the body element exists.
+            expect(body).toBeDefined();
+
+            var feedList = $('ul.feed-list');
+
+            // Test: Check if the feed class exists on element ul.
+            expect(feedList).toBeDefined();
+
+            var feedListInnerElements = feedList.children();
+
+            // Test: Check if the feed class exists on element ul.
+            expect(feedListInnerElements).toBeDefined();
+            
+            $.each(feedListInnerElements, function (i, link) {
+                // Test: Check each li contains a element.
+                expect($(link).has('a').length).toBe(1);
+            });
+        });
+
 
     });
 
@@ -201,5 +226,40 @@ $(function () {
         });
 
     });
+
+    // Test suite: CSS Links check
+    describe('New Feed Selection', function () {
+
+        var feed;
+
+        beforeEach(function (done) {
+            loadFeed(0, function () {
+                feed = $('.feed');
+                done();
+            })
+        });
+
+        it('Feed Content Changed.', function (done) {
+
+            // Load body element into variable.
+            var body = $('body');
+
+            // Load feed element into variable.
+            var feedAfterLoad = $('.feed');
+            // Test: Check if the body element exists.
+            expect(body).toBeDefined();
+
+            // Test: Check if the feed class exists.
+            expect(feedAfterLoad).not.toBeUndefined();
+
+            // Test: Check if the initial feed object and the new feed object are the same.
+            expect(feedAfterLoad).not.toBe(feed);
+
+            done();
+        });
+
+    });
+
+
 
 } ());
