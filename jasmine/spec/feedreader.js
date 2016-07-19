@@ -140,16 +140,13 @@ $(function () {
 
             // Test: Check if the feed class exists on element ul.
             expect(feedListInnerElements).toBeDefined();
-            
+
             $.each(feedListInnerElements, function (i, link) {
                 // Test: Check each li contains a element.
                 expect($(link).has('a').length).toBe(1);
             });
         });
-
-
     });
-
 
     // Test suite: Initial Entries
     describe('Initial Entries', function () {
@@ -228,34 +225,52 @@ $(function () {
     });
 
     // Test suite: CSS Links check
-    describe('New Feed Selection', function () {
+    describe('CSS Links exists', function () {
 
-        var feed;
+        var links = ['<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,700">',
+            '<link rel="stylesheet" href="css/normalize.css">',
+            '<link rel="stylesheet" href="css/icomoon.css">',
+            '<link rel="stylesheet" href="css/style.css">',
+            '<link rel="stylesheet" href="jasmine/lib/jasmine-2.1.2/jasmine.css">',
+            '<link href="https://www.google.com/uds/api/feeds/1.0/482f2817cdf8982edf2e5669f9e3a627/default+en.css" type="text/css" rel="stylesheet">'
+        ];
 
-        beforeEach(function (done) {
-            loadFeed(0, function () {
-                feed = $('.feed');
-                done();
-            })
-        });
+        // Test : Check if the css links exists. 
+        it('CSS Links loaded onto page', function () {
 
-        it('Feed Content Changed.', function (done) {
-
-            // Load body element into variable.
+            var linkAfterLoadedAsStrings = [];
+            
             var body = $('body');
 
-            // Load feed element into variable.
-            var feedAfterLoad = $('.feed');
-            // Test: Check if the body element exists.
+            // Test: Check the body to be defined. 
             expect(body).toBeDefined();
 
-            // Test: Check if the feed class exists.
-            expect(feedAfterLoad).not.toBeUndefined();
+            var linksAfterLoaded = $('link').get();
 
-            // Test: Check if the initial feed object and the new feed object are the same.
-            expect(feedAfterLoad).not.toBe(feed);
+            // Test: Check the linksAfterLoaded variable is defined. 
+            expect(linksAfterLoaded).toBeUndefined();
 
-            done();
+            $.each(linksAfterLoaded, function (i, link) {
+                linkAfterLoadedAsStrings.push(link.outerHTML);
+            });
+
+            var linksAfterLoadedJoined = linkAfterLoadedAsStrings.sort().join(',');
+            var linksInitialoadedJoined = links.sort().join(',');
+
+            // Test: Check the linksAfterLoaded and links after loaded are the same.
+            expect(linksInitialoadedJoined).toBe(linksAfterLoadedJoined);
+        });
+
+    });
+
+    // Test suite: Javascript Link check
+    describe('Javascript Links exists', function () {
+
+        // TODO : Right test
+        it('Javascript Links loaded onto page', function () {
+
+            
+
         });
 
     });
