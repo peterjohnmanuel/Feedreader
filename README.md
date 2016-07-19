@@ -62,28 +62,27 @@
 * Check if there is a entry link class.
 * Check each entry-link has a article.entry element.
 
-
 ## Test suite: New Feed Selection
 
 ### Test : Feed Content Changed.
 
-* Test: Check if the body element exists.
-* Test: Check if the feed class exists.
-* Test: Check if the initial feed object and the new feed object are the same.
+* Check if the body element exists.
+* Check if the feed class exists.
+* Check if the initial feed object and the new feed object are the same.
 
 
 ## Test suite: CSS Links check
 
 ### Test CSS Links loaded onto page
 
-* Test: Check the body to be defined. 
+* Check the body to be defined. 
 * Check the linksAfterLoaded variable is defined. 
-* Test: Check the linksAfterLoaded and links after loaded are the same.
+* Check the linksAfterLoaded and links after loaded are the same.
 
 
 ## Test suite: Javascript Links check (TODO)
 
-
+* TODO : Write this test.
 
 
 # URLs used during research and implementation of project.
