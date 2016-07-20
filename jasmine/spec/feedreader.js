@@ -237,7 +237,7 @@ $(function () {
             var linksAfterLoaded = $('link').get();
 
             // Test: Check the linksAfterLoaded variable is defined. 
-            expect(linksAfterLoaded).toBeUndefined();
+            expect(linksAfterLoaded).not.toBeUndefined();
 
             $.each(linksAfterLoaded, function (i, link) {
                 linkAfterLoadedAsStrings.push(link.outerHTML);
