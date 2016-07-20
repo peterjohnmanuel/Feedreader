@@ -152,9 +152,7 @@ $(function () {
     describe('Initial Entries', function () {
 
         beforeEach(function (done) {
-            loadFeed(0, function () {
-                done();
-            })
+            loadFeed(0, done )
         });
 
         // Test Description : Load Feed function called 
