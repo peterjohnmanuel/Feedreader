@@ -267,7 +267,7 @@ $(function () {
     describe('Javascript Links exists', function () {
 
         // TODO : Right test
-        it('Javascript Links loaded onto page', function () {
+        xit('Javascript Links loaded onto page', function () {
 
             
 
