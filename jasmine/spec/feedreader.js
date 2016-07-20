@@ -153,24 +153,20 @@ $(function () {
         });
 
         // Test Description : Load Feed function called 
-        it('Load Feed function called ', function (done) {
+        it('Load Feed function called ', function () {
 
             // Load body element into variable.
             var body = $('body');
 
             // Load feed element into variable.
-            var feed = $('.feed');
+            var feed = $('.feed .entry');
             // Test: Check if the body element exists.
             expect(body).toBeDefined();
 
             // Test: Check if the feed class exists.
-            expect(feed).not.toBeUndefined();
-
-            // Get all children into a dom field.
-            var feedDomElement = feed.children();
-
+            expect(feed).not.toBeUndefined();            
             // Test: Check if there is a entry link class.
-            expect(feedDomElement.has('a.entry-link')).toBeTruthy();
+            expect(feed.has('a.entry-link')).toBeTruthy();
 
             // Get all entry links.
             var entryLinks = $('.feed a.entry-link');
@@ -181,8 +177,6 @@ $(function () {
                 // Test: Check each entry-link has a article.entry element.
                 expect($(link).has('article.entry').length).toBe(1);
             });
-
-            done();
         });
     });
 
