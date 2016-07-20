@@ -44,7 +44,7 @@ $(function () {
 
             // Loop over all Feeds 
             allFeeds.forEach(function (feed) {
-                // Test: Feeds url not to be empty 
+                // Test: Feeds url are not empty and contain a valid url. 
                 expect(feed.url).toMatch(/http/);
             });
 
@@ -56,7 +56,7 @@ $(function () {
             // Test: Check if allFeeds array defined
             expect(allFeeds).toBeDefined();
 
-            // Test: All Feeds to have lenght greater than 0
+            // Test: All Feeds to have length greater than 0
             expect(allFeeds.length).not.toBe(0);
 
             // Loop over all Feeds                
@@ -68,7 +68,7 @@ $(function () {
             // Loop over all Feeds 
             allFeeds.forEach(function (feed) {
                 // Test: Feeds name not to be empty 
-                expect(feed.name).not.toMatch(/''/);
+                expect(feed.name).toMatch('');
             });
 
         });
