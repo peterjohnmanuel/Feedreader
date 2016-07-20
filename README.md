@@ -18,8 +18,7 @@
 * Check if allFeeds array defined.
 * Check if allfeeds array to have a length greater than 0.             
 * Check if allfeeds elements has url defined. 
-* Check if allfeeds elements url is not empty. 
-* Check if feed is a valid url
+* Check if allfeeds elements url is not empty and valid. 
 
 
 ### Test: all Feeds has populated name
