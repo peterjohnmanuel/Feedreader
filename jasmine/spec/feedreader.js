@@ -149,7 +149,7 @@ $(function () {
     describe('Initial Entries', function () {
 
         beforeEach(function (done) {
-            loadFeed(0, done )
+            loadFeed(0, done)
         });
 
         // Test Description : Load Feed function called 
@@ -164,7 +164,7 @@ $(function () {
             expect(body).toBeDefined();
 
             // Test: Check if the feed class exists.
-            expect(feed).not.toBeUndefined();            
+            expect(feed).not.toBeUndefined();
             // Test: Check if there is a entry link class.
             expect(feed.has('a.entry-link')).toBeTruthy();
 
@@ -183,30 +183,23 @@ $(function () {
     // Test suite: New Feed Selection
     describe('New Feed Selection', function () {
 
-        var feed;
+        var firstFeed;
+        var secondFeed;
 
         beforeEach(function (done) {
             loadFeed(0, function () {
-                feed = $('.feed');
-                done();
-            })
+                firstFeed = $('.feed a').get(0);
+                loadFeed(1, function () {
+                    secondFeed = $('.feed a').get(1);
+                    done();
+                });
+            });
         });
 
         it('Feed Content Changed.', function (done) {
 
-            // Load body element into variable.
-            var body = $('body');
-
-            // Load feed element into variable.
-            var feedAfterLoad = $('.feed');
-            // Test: Check if the body element exists.
-            expect(body).toBeDefined();
-
-            // Test: Check if the feed class exists.
-            expect(feedAfterLoad).not.toBeUndefined();
-
-            // Test: Check if the initial feed object and the new feed object are the same.
-            expect(feedAfterLoad).not.toBe(feed);
+            // Test: Check that feed object are not the same.
+            expect(firstFeed).not.toBe(secondFeed);
 
             done();
         });
@@ -228,7 +221,7 @@ $(function () {
         it('CSS Links loaded onto page', function () {
 
             var linkAfterLoadedAsStrings = [];
-            
+
             var body = $('body');
 
             // Test: Check the body to be defined. 
@@ -258,7 +251,7 @@ $(function () {
         // TODO : Right test
         xit('Javascript Links loaded onto page', function () {
 
-            
+
 
         });
 

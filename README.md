@@ -65,9 +65,7 @@
 
 ### Test : Feed Content Changed.
 
-* Check if the body element exists.
-* Check if the feed class exists.
-* Check if the initial feed object and the new feed object are the same.
+* Check that feed object are not the same.
 
 
 ## Test suite: CSS Links check
