@@ -183,14 +183,13 @@ $(function () {
     // Test suite: New Feed Selection
     describe('New Feed Selection', function () {
 
-        var firstFeed;
-        var secondFeed;
+        var allFeeds = []
 
         beforeEach(function (done) {
             loadFeed(0, function () {
-                firstFeed = $('.feed a').get(0);
+                allFeeds.push($('.feed').html());
                 loadFeed(1, function () {
-                    secondFeed = $('.feed a').get(1);
+                    allFeeds.push($('.feed').html());
                     done();
                 });
             });
@@ -199,7 +198,7 @@ $(function () {
         it('Feed Content Changed.', function (done) {
 
             // Test: Check that feed object are not the same.
-            expect(firstFeed).not.toBe(secondFeed);
+            expect(allFeeds[0]).not.toBe(allFeeds[1]);
 
             done();
         });
