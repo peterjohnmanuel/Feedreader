@@ -1,73 +1,55 @@
-/* feedreader.js
- *
- * This is the spec file that Jasmine will read and contains
- * all of the tests that will be run against your application.
- */
-
-/* We're placing all of our tests within the $() function,
- * since some of these tests may require DOM elements. We want
- * to ensure they don't run until the DOM is ready.
+/**
+ * @file Feed Reader
  */
 $(function () {
-    /* This is our first test suite - a test suite just contains
-    * a related set of tests. This suite is all about the RSS
-    * feeds definitions, the allFeeds variable in our application.
-    */
+
+    /** Test Suite: RSS Feeds  */
     describe('RSS Feeds', function () {
-        /* This is our first test - it tests to make sure that the
-         * allFeeds variable has been defined and that it is not
-         * empty. Experiment with this before you get started on
-         * the rest of this project. What happens when you change
-         * allFeeds in app.js to be an empty array and refresh the
-         * page?
-         */
+
+        /**  Test: Check if all feeds are defined. */
         it('are defined', function () {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
 
 
-        // Test for all Feeds has populated url.
+        /** Test: all Feeds has populated url. */
         it('all Feeds has populated url', function () {
 
-            // Test: Check if allFeeds array defined
+            /** Test Case: Check if allFeeds array defined */
             expect(allFeeds).toBeDefined();
 
-            // Test: All Feeds to have lenght greater than 0
+            /** Test Case: All Feeds to have length greater than 0 */
             expect(allFeeds.length).not.toBe(0);
 
-            // Loop over all Feeds                
             allFeeds.forEach(function (feed) {
-                // Test: All feeds url to be defined 
+                /** Test Case: All feeds url to be defined  */
                 expect(feed.url).toBeDefined();
             });
 
-            // Loop over all Feeds 
             allFeeds.forEach(function (feed) {
-                // Test: Feeds url are not empty and contain a valid url. 
+                /** Test Case: Feeds url are not empty and contain a valid url. */
                 expect(feed.url).toMatch(/http/);
             });
 
         });
 
-        // Test for all Feeds has populated name.
+        /** Test: all Feeds has populated name. */
         it('all Feeds has populated name', function () {
 
-            // Test: Check if allFeeds array defined
+            /** Test Case: Check if allFeeds array defined */
             expect(allFeeds).toBeDefined();
 
-            // Test: All Feeds to have length greater than 0
+            /** Test Case: All Feeds to have length greater than 0 */
             expect(allFeeds.length).not.toBe(0);
 
-            // Loop over all Feeds                
             allFeeds.forEach(function (feed) {
-                // Test: All feeds name to be defined 
+                /** Test Case: All feeds name to be defined */
                 expect(feed.name).toBeDefined();
             });
 
-            // Loop over all Feeds 
             allFeeds.forEach(function (feed) {
-                // Test: Feeds name not to be empty 
+                /** Test Case: Feeds name not to be empty  */
                 expect(feed.name).toMatch('');
             });
 
@@ -75,120 +57,115 @@ $(function () {
 
     });
 
-    // Menu Test Suite
+    /** Test Suite: Menu Test Suite  */
     describe('The Menu', function () {
 
-        // Test menu visibility.
+        /** Test: menu visibility. */
         it('menu visibility', function () {
 
-            // Load body element into variable.
             var body = $('body');
 
-            // Test: Check if the body element exists.
+            /** Test Case: Check if the body element exists. */
             expect(body).toBeDefined();
 
-            // Test: Check if the body element has the menu-hidden class.
+            /** Test Case: Check if the body element has the menu-hidden class. */
             expect(body.hasClass('menu-hidden')).toBeTruthy();
         });
 
 
-        // Test to hide and show menu visibility after click event.
+        /** Test: hide and show menu visibility after click event. */
         it('hide and show menu visibility', function () {
-            // Load body element into variable.
+
             var body = $('body');
 
-            // Test: Check if the body element exists.
+            /** Test Case: Check if the body element exists. */
             expect(body).toBeDefined();
 
-            // Test: Check if the body element has the menu-hidden class on startup.
+            /** Test Case: Check if the body element has the menu-hidden class on startup. */
             expect(body.hasClass('menu-hidden')).toBeTruthy();
 
-            // Store the menu icon link element in a cached variable.
             var menuIconLink = $('.menu-icon-link');
 
-            // Toggle the click event.
             menuIconLink.click();
 
-            // Test: Check if the body element does not have the class menu-hidden.
+            /** Test Case: Check if the body element does not have the class menu-hidden. */
             expect(body.hasClass('menu-hidden')).toBeFalsy();
 
-            // Toggle the click event.
             menuIconLink.click();
 
-            // Test: Check if the body element has the class menu-hidden.
+            /** Test Case: Check if the body element has the class menu-hidden. */
             expect(body.hasClass('menu-hidden')).toBeTruthy();
         });
 
-        // Test side menu links.
+        /** Test: side menu links. */
         it('Side menu links exists', function () {
 
-            // Load body element into variable.
             var body = $('body');
 
-            // Test: Check if the body element exists.
+            /** Test Case: Check if the body element exists. */
             expect(body).toBeDefined();
 
             var feedList = $('ul.feed-list');
 
-            // Test: Check if the feed class exists on element ul.
+            /** Test Case: Check if the feed class exists on element ul. */
             expect(feedList).toBeDefined();
 
             var feedListInnerElements = feedList.children();
 
-            // Test: Check if the feed class exists on element ul.
+
+            /** Test Case: Check if the feed class exists on element ul. */
             expect(feedListInnerElements).toBeDefined();
 
             $.each(feedListInnerElements, function (i, link) {
-                // Test: Check each li contains a element.
+                /** Test Case: Check each li contains a element. */
                 expect($(link).has('a').length).toBe(1);
             });
         });
     });
 
-    // Test suite: Initial Entries
+    /** Test Suite: Initial Entries */
     describe('Initial Entries', function () {
 
         beforeEach(function (done) {
             loadFeed(0, done)
         });
 
-        // Test Description : Load Feed function called 
+        /** Test: Load Feed function called  */
         it('Load Feed function called ', function () {
 
-            // Load body element into variable.
             var body = $('body');
-
-            // Load feed element into variable.
             var feed = $('.feed .entry');
-            // Test: Check if the body element exists.
+
+            /** Test Case: Check if the body element exists. */
             expect(body).toBeDefined();
 
-            // Test: Check if the feed class exists.
+            /** Test Case: Check if the feed class exists. */
             expect(feed).not.toBeUndefined();
-            // Test: Check if there is a entry link class.
+
+            /** Test Case: Check if there is a entry link class. */
             expect(feed.has('a.entry-link')).toBeTruthy();
 
-            // Get all entry links.
             var entryLinks = $('.feed a.entry-link');
 
-            // Loop over all entry links 
             $.each(entryLinks, function (i, link) {
 
-                // Test: Check each entry-link has a article.entry element.
+                /** Test Case: Check each entry-link has a article.entry element. */
                 expect($(link).has('article.entry').length).toBe(1);
             });
         });
     });
 
-    // Test suite: New Feed Selection
+    /** Test Suite: New Feed Selection */
     describe('New Feed Selection', function () {
 
         var allFeeds = []
 
         beforeEach(function (done) {
             loadFeed(0, function () {
+                /**  Load all feeds from first function into allFeeds. */ 
                 allFeeds.push($('.feed').html());
                 loadFeed(1, function () {
+                    /**  Load all feeds from second function into allFeeds. */
                     allFeeds.push($('.feed').html());
                     done();
                 });
@@ -197,7 +174,7 @@ $(function () {
 
         it('Feed Content Changed.', function (done) {
 
-            // Test: Check that feed object are not the same.
+            /** Test Case: Check that feed object are not the same. */
             expect(allFeeds[0]).not.toBe(allFeeds[1]);
 
             done();
@@ -205,7 +182,7 @@ $(function () {
 
     });
 
-    // Test suite: CSS Links check
+    /** Test Suite: CSS Links check */
     describe('CSS Links exists', function () {
 
         var links = ['<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,700">',
@@ -216,19 +193,19 @@ $(function () {
             '<link href="https://www.google.com/uds/api/feeds/1.0/482f2817cdf8982edf2e5669f9e3a627/default+en.css" type="text/css" rel="stylesheet">'
         ];
 
-        // Test : Check if the css links exists. 
+        /** Test: CSS Links loaded onto page*/
         it('CSS Links loaded onto page', function () {
 
             var linkAfterLoadedAsStrings = [];
 
             var body = $('body');
 
-            // Test: Check the body to be defined. 
+            /** Test Case: Check if the body element exists. */
             expect(body).toBeDefined();
 
             var linksAfterLoaded = $('link').get();
 
-            // Test: Check the linksAfterLoaded variable is defined. 
+            /** Test Case: Check the linksAfterLoaded variable is defined.  */
             expect(linksAfterLoaded).not.toBeUndefined();
 
             $.each(linksAfterLoaded, function (i, link) {
@@ -238,20 +215,20 @@ $(function () {
             var linksAfterLoadedJoined = linkAfterLoadedAsStrings.sort().join(',');
             var linksInitialoadedJoined = links.sort().join(',');
 
-            // Test: Check the linksAfterLoaded and links after loaded are the same.
+            /** Test Case: Check the linksAfterLoaded and links after loaded are the same. */
             expect(linksInitialoadedJoined).toBe(linksAfterLoadedJoined);
         });
 
     });
 
-    // Test suite: Javascript Link check
+    /**  Test Suite: Javascript Links exists' */
     describe('Javascript Links exists', function () {
 
-        // TODO : Right test
+        /** 
+         * @todo Implement javascript links loaded onto page test.
+         * Test Case: Check the linksAfterLoaded and links after loaded are the same.
+         */
         xit('Javascript Links loaded onto page', function () {
-
-
-
         });
 
     });
