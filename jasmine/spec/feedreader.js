@@ -8,13 +8,15 @@ $(function () {
 
         /**  Test: Check if all feeds are defined. */
         it('are defined', function () {
+            /** Test Case: Check if allFeeds array defined */
             expect(allFeeds).toBeDefined();
+            /** Test Case: All Feeds to have length greater than 0 */
             expect(allFeeds.length).not.toBe(0);
         });
 
 
-        /** Test: all Feeds has populated url. */
-        it('all Feeds has populated url', function () {
+        /** Test: has an url defined and is not empty */
+        it('has an url defined and is not empty', function () {
 
             /** Test Case: Check if allFeeds array defined */
             expect(allFeeds).toBeDefined();
@@ -22,20 +24,12 @@ $(function () {
             /** Test Case: All Feeds to have length greater than 0 */
             expect(allFeeds.length).not.toBe(0);
 
-            allFeeds.forEach(function (feed) {
-                /** Test Case: All feeds url to be defined  */
-                expect(feed.url).toBeDefined();
-            });
-
-            allFeeds.forEach(function (feed) {
-                /** Test Case: Feeds url are not empty and contain a valid url. */
-                expect(feed.url).toMatch(/http/);
-            });
+            allFeeds.forEach(testAllFeedsURL);
 
         });
 
-        /** Test: all Feeds has populated name. */
-        it('all Feeds has populated name', function () {
+        /** Test: has a name defined and is not empty */
+        it('has a name defined and is not empty', function () {
 
             /** Test Case: Check if allFeeds array defined */
             expect(allFeeds).toBeDefined();
@@ -43,17 +37,34 @@ $(function () {
             /** Test Case: All Feeds to have length greater than 0 */
             expect(allFeeds.length).not.toBe(0);
 
-            allFeeds.forEach(function (feed) {
-                /** Test Case: All feeds name to be defined */
-                expect(feed.name).toBeDefined();
-            });
-
-            allFeeds.forEach(function (feed) {
-                /** Test Case: Feeds name not to be empty  */
-                expect(feed.name).toMatch('');
-            });
-
+            allFeeds.forEach(testAllFeedsName);
         });
+
+        /** 
+         * @function testAllFeedsURL
+         * @param feed
+         */
+        function testAllFeedsURL(feed) {
+
+            /** Test Case: All feeds url to be defined  */
+            expect(feed.url).toBeDefined();
+
+            /** Test Case: Feeds url are not empty and contain a valid url. */
+            expect(feed.url).toMatch(/http/);
+        }
+
+        /** 
+         * @function testAllFeedsName
+         * @param feed
+         */
+        function testAllFeedsName(feed) {
+
+            /** Test Case: All feeds name to be defined */
+            expect(feed.name).toBeDefined();
+
+            /** Test Case: Feeds name not to be empty  */
+            expect(feed.name).not.toMatch(/''/);
+        }
 
     });
 
@@ -61,7 +72,7 @@ $(function () {
     describe('The Menu', function () {
 
         /** Test: menu visibility. */
-        it('menu visibility', function () {
+        it('is not visible', function () {
 
             var body = $('body');
 
@@ -74,7 +85,7 @@ $(function () {
 
 
         /** Test: hide and show menu visibility after click event. */
-        it('hide and show menu visibility', function () {
+        it('hides and shows it\'s visible state', function () {
 
             var body = $('body');
 
@@ -98,7 +109,7 @@ $(function () {
         });
 
         /** Test: side menu links. */
-        it('Side menu links exists', function () {
+        it('side links exists', function () {
 
             var body = $('body');
 
@@ -127,11 +138,11 @@ $(function () {
     describe('Initial Entries', function () {
 
         beforeEach(function (done) {
-            loadFeed(0, done)
+            loadFeed(0, done);
         });
 
         /** Test: Load Feed function called  */
-        it('Load Feed function called ', function () {
+        it('calls the loadFeed function ', function () {
 
             var body = $('body');
             var feed = $('.feed .entry');
@@ -162,7 +173,7 @@ $(function () {
 
         beforeEach(function (done) {
             loadFeed(0, function () {
-                /**  Load all feeds from first function into allFeeds. */ 
+                /**  Load all feeds from first function into allFeeds. */
                 allFeeds.push($('.feed').html());
                 loadFeed(1, function () {
                     /**  Load all feeds from second function into allFeeds. */
@@ -172,29 +183,29 @@ $(function () {
             });
         });
 
-        it('Feed Content Changed.', function (done) {
-
+        /** Test: contect has changed */
+        it('content has changed', function () {
             /** Test Case: Check that feed object are not the same. */
             expect(allFeeds[0]).not.toBe(allFeeds[1]);
-
-            done();
         });
 
     });
 
     /** Test Suite: CSS Links check */
-    describe('CSS Links exists', function () {
+    describe('CSS Links', function () {
+
+        var localeLanguage = navigator.language;
 
         var links = ['<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,700">',
             '<link rel="stylesheet" href="css/normalize.css">',
             '<link rel="stylesheet" href="css/icomoon.css">',
             '<link rel="stylesheet" href="css/style.css">',
             '<link rel="stylesheet" href="jasmine/lib/jasmine-2.1.2/jasmine.css">',
-            '<link href="https://www.google.com/uds/api/feeds/1.0/482f2817cdf8982edf2e5669f9e3a627/default+en.css" type="text/css" rel="stylesheet">'
+            '<link href="https://www.google.com/uds/api/feeds/1.0/482f2817cdf8982edf2e5669f9e3a627/default+'+ localeLanguage +'.css" type="text/css" rel="stylesheet">'
         ];
 
         /** Test: CSS Links loaded onto page*/
-        it('CSS Links loaded onto page', function () {
+        it('exists and are loaded onto page.', function () {
 
             var linkAfterLoadedAsStrings = [];
 
@@ -222,13 +233,13 @@ $(function () {
     });
 
     /**  Test Suite: Javascript Links exists' */
-    describe('Javascript Links exists', function () {
+    describe('Javascript Links', function () {
 
         /** 
          * @todo Implement javascript links loaded onto page test.
          * Test Case: Check the linksAfterLoaded and links after loaded are the same.
          */
-        xit('Javascript Links loaded onto page', function () {
+        xit('exists and are loaded onto page', function () {
         });
 
     });

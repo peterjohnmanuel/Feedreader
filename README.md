@@ -13,7 +13,12 @@
 
 ## Testsuite: RSS Feeds
 
-### Test: all Feeds has populated URL
+### Test: are defined
+
+* Check if allFeeds array defined.
+* Check if allfeeds array to have a length greater than 0.      
+
+### Test: has an url defined and is not empty
 
 * Check if allFeeds array defined.
 * Check if allfeeds array to have a length greater than 0.             
@@ -21,7 +26,7 @@
 * Check if allfeeds elements url is not empty and valid. 
 
 
-### Test: all Feeds has populated name
+### Test: has a name defined and is not empty
 
 * Check if allFeeds array defined.
 * Check if allfeeds array to have a length greater than 0.   
@@ -31,12 +36,12 @@
 
 ## Testsuite: The Menu
 
-### Test: menu visibility
+### Test: is not visible
 
 * Check if the body element exists.
 * Check if the body element has the menu-hidden class.
 
-### Test: hide and show menu visibility
+### Test: hides and shows it\'s visible state
 
 * Check if the body element exists.
 * Check if the body element has the menu-hidden class.
@@ -45,7 +50,7 @@
 * Check if the body element does not have the class menu-hidden.
 * Check if the body element has the class menu-hidden.
 
-### Test side menu links.
+### Test: side links exists.
 
 * Check if the body element exists.
 * Check if the feed class exists on element ul.
@@ -54,7 +59,7 @@
 
 ## Test suite: Initial Entries
 
-### Test : Load Feed function called 
+### Test: calls the loadFeed function
 
 * Check if the body element exists.
 * Check if the feed class exists.
@@ -63,14 +68,13 @@
 
 ## Test suite: New Feed Selection
 
-### Test : Feed Content Changed.
+### Test: content has changed
 
 * Check that feed object are not the same.
 
+## Test suite: CSS Links
 
-## Test suite: CSS Links check
-
-### Test CSS Links loaded onto page
+### Test: exists and are loaded onto page
 
 * Check the body to be defined. 
 * Check the linksAfterLoaded variable is defined. 
@@ -79,7 +83,7 @@
 
 ## Test suite: Javascript Links check (TODO)
 
-* TODO : Write this test.
+* TODO: Write this test.
 
 
 # URLs used during research and implementation of project.
@@ -90,3 +94,4 @@
 * [Using Jasmine 2.0's New done() Function to Test Asynchronous Processes](http://www.htmlgoodies.com/beyond/javascript/stips/using-jasmine-2.0s-new-done-function-to-test-asynchronous-processes.html)
 * [Jasmine Github](http://jasmine.github.io/)
 * [Testing Javascript Using the Jasmine Framework](http://www.htmlgoodies.com/beyond/javascript/testing-javascript-using-the-jasmine-framework.html)
+* [Navigator language property](http://www.w3schools.com/jsref/prop_nav_language.asp)
