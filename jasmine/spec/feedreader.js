@@ -77,7 +77,7 @@ $(function () {
             expect(body).toBeDefined();
 
             /** Test Case: Check if the body element has the menu-hidden class. */
-            expect(body.hasClass('menu-hidden')).toBeTruthy();
+            expect(body.hasClass('menu-hidden')).toBe(true);
         });
 
 
