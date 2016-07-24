@@ -60,7 +60,7 @@ $(function () {
             expect(feed.name).toBeDefined();
 
             /** Test Case: Feeds name not to be empty  */
-            expect(feed.name).not.toMatch(/''/);
+            expect(feed.name).not.toBe('');
         }
 
     });
