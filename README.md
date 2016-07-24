@@ -41,7 +41,7 @@
 * Check if the body element exists.
 * Check if the body element has the menu-hidden class.
 
-### Test: hides and shows it\'s visible state
+### Test: hides and shows it's visible state
 
 * Check if the body element exists.
 * Check if the body element has the menu-hidden class.
