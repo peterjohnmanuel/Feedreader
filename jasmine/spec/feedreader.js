@@ -71,10 +71,6 @@ $(function () {
         /** Test: menu visibility. */
         it('is not visible', function () {
 
-            var body = $('body');
-
-            /** Test Case: Check if the body element exists. */
-            expect(body).toBeDefined();
 
             /** Test Case: Check if the body element has the menu-hidden class. */
             expect(body.hasClass('menu-hidden')).toBe(true);
@@ -83,11 +79,6 @@ $(function () {
 
         /** Test: hide and show menu visibility after click event. */
         it('hides and shows it\'s visible state', function () {
-
-            var body = $('body');
-
-            /** Test Case: Check if the body element exists. */
-            expect(body).toBeDefined();
 
             /** Test Case: Check if the body element has the menu-hidden class on startup. */
             expect(body.hasClass('menu-hidden')).toBeTruthy();
@@ -107,11 +98,6 @@ $(function () {
 
         /** Test: side menu links. */
         it('side links exists', function () {
-
-            var body = $('body');
-
-            /** Test Case: Check if the body element exists. */
-            expect(body).toBeDefined();
 
             var feedList = $('ul.feed-list');
 
@@ -141,11 +127,7 @@ $(function () {
         /** Test: Load Feed function called  */
         it('calls the loadFeed function ', function () {
 
-            var body = $('body');
             var feed = $('.feed .entry');
-
-            /** Test Case: Check if the body element exists. */
-            expect(body).toBeDefined();
 
             /** Test Case: Check if the feed class exists. */
             expect(feed).not.toBeUndefined();
@@ -205,12 +187,6 @@ $(function () {
         it('exists and are loaded onto page.', function () {
 
             var linkAfterLoadedAsStrings = [];
-
-            var body = $('body');
-
-            /** Test Case: Check if the body element exists. */
-            expect(body).toBeDefined();
-
             var linksAfterLoaded = $('link').get();
 
             /** Test Case: Check the linksAfterLoaded variable is defined.  */

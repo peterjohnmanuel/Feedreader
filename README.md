@@ -36,21 +36,16 @@
 
 ### Test: is not visible
 
-* Check if the body element exists.
 * Check if the body element has the menu-hidden class.
 
 ### Test: hides and shows it's visible state
 
-* Check if the body element exists.
-* Check if the body element has the menu-hidden class.
-* Check if the body element exists.
 * Check if the body element has the menu-hidden class on startup.
 * Check if the body element does not have the class menu-hidden.
 * Check if the body element has the class menu-hidden.
 
 ### Test: side links exists.
 
-* Check if the body element exists.
 * Check if the feed class exists on element ul.
 * Check if the feed class exists on element ul.
 * Check each li contains a element.
@@ -59,7 +54,6 @@
 
 ### Test: calls the loadFeed function
 
-* Check if the body element exists.
 * Check if the feed class exists.
 * Check if there is a entry link class.
 * Check each entry-link has a article.entry element.
