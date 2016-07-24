@@ -154,7 +154,7 @@ $(function () {
     /** Test Suite: New Feed Selection */
     describe('New Feed Selection', function () {
 
-        var allFeeds = []
+        var allFeeds = [];
 
         beforeEach(function (done) {
             loadFeed(0, function () {
