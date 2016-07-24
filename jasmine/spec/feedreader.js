@@ -170,41 +170,6 @@ $(function () {
 
     });
 
-    /** Test Suite: CSS Links check */
-    describe('CSS Links', function () {
-
-        var localeLanguage = navigator.language;
-
-        var links = ['<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,700">',
-            '<link rel="stylesheet" href="css/normalize.css">',
-            '<link rel="stylesheet" href="css/icomoon.css">',
-            '<link rel="stylesheet" href="css/style.css">',
-            '<link rel="stylesheet" href="jasmine/lib/jasmine-2.1.2/jasmine.css">',
-            '<link href="https://www.google.com/uds/api/feeds/1.0/482f2817cdf8982edf2e5669f9e3a627/default+'+ localeLanguage +'.css" type="text/css" rel="stylesheet">'
-        ];
-
-        /** Test: CSS Links loaded onto page*/
-        it('exists and are loaded onto page.', function () {
-
-            var linkAfterLoadedAsStrings = [];
-            var linksAfterLoaded = $('link').get();
-
-            /** Test Case: Check the linksAfterLoaded variable is defined.  */
-            expect(linksAfterLoaded).not.toBeUndefined();
-
-            $.each(linksAfterLoaded, function (i, link) {
-                linkAfterLoadedAsStrings.push(link.outerHTML);
-            });
-
-            var linksAfterLoadedJoined = linkAfterLoadedAsStrings.sort().join(',');
-            var linksInitialoadedJoined = links.sort().join(',');
-
-            /** Test Case: Check the linksAfterLoaded and links after loaded are the same. */
-            expect(linksInitialoadedJoined).toBe(linksAfterLoadedJoined);
-        });
-
-    });
-
     /**  Test Suite: Javascript Links exists' */
     describe('Javascript Links', function () {
 

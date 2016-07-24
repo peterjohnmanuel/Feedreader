@@ -64,15 +64,6 @@
 
 * Check that feed object are not the same.
 
-## Test suite: CSS Links
-
-### Test: exists and are loaded onto page
-
-* Check the body to be defined. 
-* Check the linksAfterLoaded variable is defined. 
-* Check the linksAfterLoaded and links after loaded are the same.
-
-
 ## Test suite: Javascript Links check (TODO)
 
 * TODO: Write this test.
