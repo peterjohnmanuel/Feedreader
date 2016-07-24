@@ -43,7 +43,10 @@ $(function () {
             /** Test Case: All feeds url to be defined  */
             expect(feed.url).toBeDefined();
 
-            /** Test Case: Feeds url are not empty and contain a valid url. */
+            /** Test Case: Feeds url are not empty. */
+            expect(feed.url).not.toBe('');            
+
+            /** Test Case: Feeds url are valid urls. */
             expect(feed.url).toMatch(/http/);
         }
 
