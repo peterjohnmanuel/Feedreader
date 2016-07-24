@@ -21,9 +21,6 @@ $(function () {
             /** Test Case: Check if allFeeds array defined */
             expect(allFeeds).toBeDefined();
 
-            /** Test Case: All Feeds to have length greater than 0 */
-            expect(allFeeds.length).not.toBe(0);
-
             allFeeds.forEach(testAllFeedsURL);
 
         });
@@ -33,9 +30,6 @@ $(function () {
 
             /** Test Case: Check if allFeeds array defined */
             expect(allFeeds).toBeDefined();
-
-            /** Test Case: All Feeds to have length greater than 0 */
-            expect(allFeeds.length).not.toBe(0);
 
             allFeeds.forEach(testAllFeedsName);
         });

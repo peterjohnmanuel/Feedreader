@@ -20,8 +20,7 @@
 
 ### Test: has an url defined and is not empty
 
-* Check if allFeeds array defined.
-* Check if allfeeds array to have a length greater than 0.             
+* Check if allFeeds array defined.       
 * Check if allfeeds elements has url defined. 
 * Check if allfeeds elements url is not empty and valid. 
 
@@ -29,7 +28,6 @@
 ### Test: has a name defined and is not empty
 
 * Check if allFeeds array defined.
-* Check if allfeeds array to have a length greater than 0.   
 * Check if allfeeds elements has name defined. 
 * Check if allfeeds elements name is not empty. 
 
