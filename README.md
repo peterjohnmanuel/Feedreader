@@ -55,6 +55,7 @@
 ### Test: calls the loadFeed function
 
 * Check if the feed class exists.
+* Check if the feed has a length greater than 0.
 * Check if there is a entry link class.
 * Check each entry-link has a article.entry element.
 

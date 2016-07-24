@@ -127,12 +127,16 @@ $(function () {
         });
 
         /** Test: Load Feed function called  */
-        it('calls the loadFeed function ', function () {
+        it('calls the loadFeed function', function () {
 
             var feed = $('.feed .entry');
 
             /** Test Case: Check if the feed class exists. */
             expect(feed).not.toBeUndefined();
+
+
+            /** Test Case: Check if the feed has a length greater than 0. */
+            expect(feed.length).toBeGreaterThan(0);
 
             /** Test Case: Check if there is a entry link class. */
             expect(feed.has('a.entry-link')).toBeTruthy();
