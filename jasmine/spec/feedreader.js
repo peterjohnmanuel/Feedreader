@@ -68,9 +68,11 @@ $(function () {
     /** Test Suite: Menu Test Suite  */
     describe('The Menu', function () {
 
+        var body = $('body');
+
+
         /** Test: menu visibility. */
         it('is not visible', function () {
-
 
             /** Test Case: Check if the body element has the menu-hidden class. */
             expect(body.hasClass('menu-hidden')).toBe(true);
