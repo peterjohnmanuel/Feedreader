@@ -2,7 +2,7 @@
 
 * This project demonstrates and incorporates jasmine testing during the Udacity Feed Reader (Unit Testing) Project.
 
-# Running the code
+# Running the code 
 
 * To run the code check out the repository or clone the repository from here [Feed Reader](https://github.com/peterjohnmanuel/Feedreader)
 * Open the folder that you downloaded after clone or extraction.
@@ -79,3 +79,10 @@
 * [Jasmine Github](http://jasmine.github.io/)
 * [Testing Javascript Using the Jasmine Framework](http://www.htmlgoodies.com/beyond/javascript/testing-javascript-using-the-jasmine-framework.html)
 * [Navigator language property](http://www.w3schools.com/jsref/prop_nav_language.asp)
+* [Picture Resizer](http://picresize.com/)
+* [Add a screenshot to your github readme](http://www.tilcode.com/add-a-screenshot-to-your-github-repo-readme-md/)
+
+---
+# Languages & Frameworks used
+
+![alt text](readmeImg/html5_logo.png "HTML5") ![alt text](readmeImg/jquery_logo.png "Jquery") ![alt text](readmeImg/jasmine_logo.ico "Jasmine") ![alt text](readmeImg/javascript_logo.png "Javascript")
